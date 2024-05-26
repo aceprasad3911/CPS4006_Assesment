@@ -1,0 +1,18 @@
+{
+    "liveServer.settings.AdvanceCustomBrowserCmdLine":"chrome",
+    "liveServer.settings.port": 5500,
+    "workbench.colorTheme": "Solarized Dark",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.settings.applyToAllProfiles": [
+        "liveServer.settings.CustomBrowser"
+    ],
+    "liveServer.settings.NoBrowser": true,
+    "liveServer.settings.useLocalIp": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "liveServer.settings.CustomBrowser": "chrome"
+} 
+
