@@ -1,5 +1,5 @@
 {
-    "liveServer.settings.AdvanceCustomBrowserCmdLine":"chrome",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine":"chrome --new-window",
     "liveServer.settings.port": 5500,
     "workbench.colorTheme": "Solarized Dark",
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
@@ -7,7 +7,7 @@
     "workbench.settings.applyToAllProfiles": [
         "liveServer.settings.CustomBrowser"
     ],
-    "liveServer.settings.NoBrowser": true,
+    "liveServer.settings.NoBrowser": false,
     "liveServer.settings.useLocalIp": true,
     "liveServer.settings.donotVerifyTags": true,
     "git.autofetch": true,
