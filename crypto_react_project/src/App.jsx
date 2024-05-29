@@ -1,9 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
 import Home from "./components/Home";
-import Visual from "./components/Visual";
-import './App.css'
+import Crypto from "./components/Crypto";
+import Watchlist from './components/Watchlist';
+import Curconv from "./components/Curconv"
+import Settings from "./components/Settings"
+import ResponsiveGrid from './components/ResponsiveGrid';
+import './index.css'
+
+function NavBar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar">
+      <div className="container-fluid">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav w-100">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Crypto" className="nav-link">Crypto List</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Watchlist" className="nav-link">Crypto Watchlist</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Curconv" className="nav-link">Forex Calculator</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Settings" className="nav-link">Preferences</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 function App() {
   const [sharesData, setSharesData] = useState([]);
@@ -23,19 +54,22 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <Router>
-        <ul className='App-header'>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/visual">Visual</Link></li>
-        </ul>
-
+    <Router>
+      <header className="header">
+        <h1 className="text-center">St Mary's Crypto Solutions Ltd.</h1>
+      </header>
+      <NavBar />
+      <ResponsiveGrid />
+      <div className="main-content">
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/visual" element={<Visual data={sharesData}/>}></Route>
+          <Route path="/" element={<Home sharesData={sharesData} />}></Route>
+          <Route path="/Crypto" element={<Crypto sharesData={sharesData} />}></Route>
+          <Route path="/Watchlist" element={<Watchlist sharesData={sharesData} />}></Route>
+          <Route path="/Curconv" element={<Curconv sharesData={sharesData} />}></Route>
+          <Route path="/Settings" element={<Settings sharesData={sharesData} />}></Route>
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
